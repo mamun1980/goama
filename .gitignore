@@ -1,0 +1,7 @@
+*.pyc
+
+
+data/*
+.venv
+__pycahce__/**
+**/__pycahce__/**
