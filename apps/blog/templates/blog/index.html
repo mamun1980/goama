@@ -7,6 +7,7 @@
 </head>
 <body>
     <h2>Blog Home</h2>
+    <h4>My name is {{ name }}</h4>
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -16,5 +17,8 @@
     {% endif %}
     <br>
     <a href="{% url 'blog-call' %}">My Task</a>
+    <a href="{% url 'set-name' %}">Set My Name</a>
+    <a href="{% url 'get-name' %}">Get My Name</a>
+    <a href="{% url 'clear-cache' %}">Clear Cache</a>
 </body>
 </html>
