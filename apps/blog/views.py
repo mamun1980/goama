@@ -13,10 +13,15 @@ class BlogHome(TemplateView):
 
 
 def set_name(request):
+    # import pdb; pdb.set_trace()
     cache.set('name', 'Khondoker Md Mamunur Rashid')
-    return render(request, 'blog/index.html')
+    context = {
+        "name": "None"
+    }
+    return render(request, 'blog/index.html', context)
 
 def set_name(request):
+    # import pdb; pdb.set_trace()
     name = cache.get('name')
     context = {
         "name": name
@@ -25,9 +30,10 @@ def set_name(request):
 
 
 def clear_cache(request):
+    # import pdb; pdb.set_trace()
     cache.clear()
     context = {
-        "name": None
+        "name": "None"
     }
     return render(request, 'blog/index.html', context)
 
