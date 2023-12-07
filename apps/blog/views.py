@@ -14,7 +14,7 @@ class BlogHome(TemplateView):
 def my_task(request):
     # import pdb; pdb.set_trace()
     mylist = [random.randint(1, 100) for i in range(10)]
-    result = mytest_task(mylist)
+    result = mytest_task.delay(mylist)
     
     messages.success(request, "Profile details updated.")
     return render(request, 'blog/index.html')
